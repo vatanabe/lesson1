@@ -15,4 +15,4 @@ for clas in range (numbers):
 	clas_score = clas_score_dictionary['scores']
 	name_clas = clas_score_dictionary['school_class']
 	print(school_evaluation + int(average(clas_score))
-	print('средняя оценка в классе ' + name_clas + ':  ' + average(clas_score))
+#	print('средняя оценка в классе ' + name_clas + ':  ' + average(clas_score))
