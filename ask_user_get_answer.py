@@ -1,4 +1,4 @@
-dialog = {'привет': 'здрасте', 'как дела': 'хорошо', 'досвиданья': 'пока'}
+dialog = {'hello': 'hi', 'how are you': 'fine', 'goodbye': 'ohh, donot leave me'}
 def get_answer(key, dictinary):
 	punctuation = ['?', ',', '.', ';', ':', '!', '(', ')']
 	for sign in punctuation:
@@ -10,9 +10,12 @@ def ask_user(answer):
 	while True:
 		user_say = input()
 		if user_say == answer:
-			print('Ну пока...')
+			print('cya')
 			break
 		else:
-			print(get_answer(user_say, dialog))
-ask_user('Пока!')
-#ask_user_get_answer.py
+			try:
+				print(get_answer(user_say, dialog))
+			except KeyError:
+				print('%s' % 'hmm')
+ask_user('Bye!')
+#python ask_user_get_answer.py
