@@ -9,17 +9,17 @@ def get_answer(key, dictinary):
 	key = key.strip()
 	key = key.lower()
 	return dictinary[key]
-def ask_user(answer):
+def ask_user(input_say, answer):
 	while True:
-		user_say = input()
+		user_say = input_say
 		if user_say == answer:
 			print('cya')
 			break
 		else:
 			try:
-				print(get_answer(user_say, dialog))
+				return(get_answer(user_say, dialog))
 			except (KeyError, OSError):
-				print('%s' % 'hmm')
+				return('%s' % 'hmm')
 #ask_user('Bye!')
 
 
@@ -31,8 +31,8 @@ def start(bot, update):
 
 def talk_to_me(bot, update):
 	print('Пришло сообщение: %s' % update.message.text)
-	#bot.sendMessage(update.message.chat_id, ask_user('Bye!'))
-	bot.sendMessage(update.message.chat_id, update.message.text)
+	bot.sendMessage(update.message.chat_id, ask_user(update.message.text,'Bye!'))
+	#bot.sendMessage(update.message.chat_id, update.message.text)
 
 def rut_bot():
 	updater = Updater("277846833:AAGKlSQ1vpbG_a1s_6W3f464X5FAo_VZbY8")
